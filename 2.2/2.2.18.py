@@ -1,13 +1,10 @@
-a, b, c = float(input()), float(input()), float(input())
-if not a and not b and not c:
-    print('Infinite solutions')
-elif not a and not b and c or b ** 2 < 4 * a * c:
-    print('No solution')
-elif b ** 2 == 4 * a * c:
-    print(f'{-b / (2 * a):.2f}')
-elif not a:
-    print(f'{-c / b:.2f}')
+side1 = int(input())
+side2 = int(input())
+side3 = int(input())
+a = sorted([side1, side2, side3])
+if a[2] ** 2 > a[1] ** 2 + a[0] ** 2:
+    print("велика")
+elif a[2] ** 2 == a[1] ** 2 + a[0] ** 2:
+    print('100%')
 else:
-    roots = [(-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a), (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)]
-    roots.sort()
-    print(f'{roots[0]:.2f} {roots[1]:.2f}')
+    print('крайне мала')

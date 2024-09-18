@@ -1,8 +1,9 @@
-from itertools import permutations
-num = input()
-a = []
-for x in permutations(num, 2):
-    c = ''.join(x)
-    a.append(int(c))
-x1 = min([i for i in a if len(str(i)) == 2])
-print(x1, max(a))
+num1 = input()
+num2 = input()
+num = sorted(num1 + num2)
+numx = num[1:3]
+summ = 0
+for i in range(2):
+    summ += int(numx[i])
+summ %= 10
+print(max(num) + str(summ) + min(num))
