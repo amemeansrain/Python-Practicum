@@ -1,7 +1,8 @@
-num1 = input()
-num2 = input()
-num3 = input()
-if num1[0] == num2[0] == num3[0]:
-    print(num1[0])
-else:
-    print(num1[1])
+from itertools import permutations
+num = input()
+a = []
+for x in permutations(num, 2):
+    c = ''.join(x)
+    a.append(int(c))
+x1 = min([i for i in a if len(str(i)) == 2])
+print(x1, max(a))
